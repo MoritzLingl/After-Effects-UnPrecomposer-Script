@@ -83,21 +83,6 @@ Also worth knowing:
 
 ---
 
-## Security & permissions
-
-The script is a single, readable text file with no dependencies. It:
-
-- does **not** read or write files on disk
-- does **not** access the network
-- does **not** run shell commands or evaluate dynamic code
-- only changes the open project, inside one undo group
-
-So you can leave **Allow Scripts to Write Files and Access Network** turned **off** in After Effects' Scripting & Expressions settings.
-
-See [SECURITY.md](SECURITY.md) for how to report a problem.
-
----
-
 ## Uninstall
 
 Delete `Un-PreCompose.jsx` from the `Scripts` folder you copied it into (Option 2) and restart After Effects. With Option 1 there is nothing to uninstall.
@@ -111,15 +96,6 @@ Delete `Un-PreCompose.jsx` from the `Scripts` folder you copied it into (Option 
 | A layer is reported as skipped | Read the reason in the report, e.g. unlock a locked pre-comp layer first. |
 | The Scripts folder path doesn't exist | Check your version: the folder name contains the year, e.g. `Adobe After Effects 2025`. Or use Option 1. |
 
-## Development
-
-`tests/mock_test.js` runs the script against a small mock of the After Effects object model (ordering, parenting, timing, container logic):
-
-```bash
-node tests/mock_test.js Un-PreCompose.jsx
-```
-
-It's a sanity check, not a replacement for testing inside After Effects.
 
 ## License
 
